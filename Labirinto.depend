@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1534361520 source:/home/fabrica/Área de Trabalho/Labirinto/main.c
+	"Labirinto/imprimir.h"
+
+1534355698 /home/fabrica/Área de Trabalho/Labirinto/bibliotecas.h
+	<stdio.h>
+
+1534365566 /home/fabrica/Área de Trabalho/Labirinto/Labirinto/labirinto.h
+	<stdlib.h>
+	<time.h>
+
+1534361498 /home/fabrica/Área de Trabalho/Labirinto/Labirinto/imprimir.h
+	<stdlib.h>
+	<stdio.h>
+	"labirinto.h"
+
