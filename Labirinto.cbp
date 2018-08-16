@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Labirinto/Arvore.h" />
+		<Unit filename="Labirinto/imprimir.h" />
+		<Unit filename="Labirinto/labirinto.h" />
+		<Unit filename="Labirinto/listas.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
