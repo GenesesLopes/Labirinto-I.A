@@ -14,3 +14,15 @@
 	<stdio.h>
 	"labirinto.h"
 
+1534387891 source:/home/geneses/Documentos/Labirinto-I.A/main.c
+	"Labirinto/imprimir.h"
+	"Labirinto/labirinto.h"
+
+1534383486 /home/geneses/Documentos/Labirinto-I.A/Labirinto/imprimir.h
+	<stdio.h>
+
+1534388578 /home/geneses/Documentos/Labirinto-I.A/Labirinto/labirinto.h
+	<stdlib.h>
+	<time.h>
+	<stdio.h>
+

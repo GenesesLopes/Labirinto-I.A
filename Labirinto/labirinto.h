@@ -9,37 +9,34 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include<stdio.h>
+
 #define PAREDE '#'
+#define TAMANHO 24
 
 
 char **labirinto(){
 
     int i,j;
     char **matriz;
-
+    FILE *arquivoMatriz;
+    srand(time(NULL));
     //alocando linhas da matriz
-    matriz = (char**) calloc(21,sizeof(char*));
+    matriz = (char**) calloc(TAMANHO,sizeof(char*));
 
     //Alocando colunas
-    for(i=0; i<21; i++)
-        matriz[i] = (char*) calloc(21,sizeof(char));
+    for(i=0; i<TAMANHO; i++)
+        matriz[i] = (char*) calloc(TAMANHO,sizeof(char));
 
-    //Preenchendo Laterais de matriz
-    for(i=0; i<20; i++){
-        for(j=0; j<20; j++){
-            matriz[i][j] = PAREDE;
+    //Lendo a matriz de um arquivo de Texto
+    arquivoMatriz = fopen("Matriz/matriz.txt","rt");
+    for(i=0;i<TAMANHO -1;i++){
+        for(j=0; j<TAMANHO -1; j++){
+            fscanf(arquivoMatriz,"%c",&matriz[i][j]);
         }
+        fscanf(arquivoMatriz,"%c",&matriz[i][j]);
     }
-
-    //gerar matriz
-    for(i=1;i<19;i++){
-        for(j=1; j<19; j++){
-            if(rand() %3 == 0)
-                matriz[i][j] = '#';
-            else
-                matriz[i][j] = ' ';
-        }
-    }
+    fclose(arquivoMatriz);
 
     return matriz;
 }

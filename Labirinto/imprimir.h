@@ -1,20 +1,16 @@
 #ifndef IMPRIMIR_H_INCLUDED
 #define IMPRIMIR_H_INCLUDED
-
-#include <stdlib.h>
+#define TAMANHO 24
 #include <stdio.h>
-#include "labirinto.h"
 
 
-void imprimir(){
+void imprimir(char **matriz){
 
-    srand(time(NULL));
     int i,j;
-    char **matriz = labirinto();
 
-    for(i=0; i<20; i++){
-        for(j=0; j<20; j++){
-            printf("%c ",matriz[i][j]);
+    for(i=0; i<TAMANHO -1; i++){
+        for(j=0; j<TAMANHO -1; j++){
+            printf("%c",matriz[i][j]);
         }
         printf("\n");
     }
