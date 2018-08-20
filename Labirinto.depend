@@ -14,15 +14,30 @@
 	<stdio.h>
 	"labirinto.h"
 
-1534397298 source:/home/geneses/Documentos/Labirinto-I.A/main.c
+1534746933 source:/home/geneses/Documentos/Labirinto-I.A/main.c
 	"Labirinto/imprimir.h"
 	"Labirinto/labirinto.h"
+	"Labirinto/metodosMatriz.h"
+	"Labirinto/metodosArvore.h"
 
-1534391899 /home/geneses/Documentos/Labirinto-I.A/Labirinto/imprimir.h
+1534566532 /home/geneses/Documentos/Labirinto-I.A/Labirinto/imprimir.h
 	<stdio.h>
 
-1534388623 /home/geneses/Documentos/Labirinto-I.A/Labirinto/labirinto.h
+1534609623 /home/geneses/Documentos/Labirinto-I.A/Labirinto/labirinto.h
 	<stdlib.h>
-	<time.h>
 	<stdio.h>
+
+1534745946 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosListas.h
+	"listas.h"
+
+1534566701 /home/geneses/Documentos/Labirinto-I.A/Labirinto/listas.h
+	"Arvore.h"
+
+1534703658 /home/geneses/Documentos/Labirinto-I.A/Labirinto/Arvore.h
+
+1534751211 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosMatriz.h
+	"metodosListas.h"
+
+1534751742 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosArvore.h
+	"Arvore.h"
 

@@ -7,9 +7,9 @@
     método para imprimir o labirinto
 */
 
-#include <stdlib.h>
-#include <time.h>
+#include<stdlib.h>
 #include<stdio.h>
+
 
 #define PAREDE '#'
 #define TAMANHO 24
@@ -20,7 +20,6 @@ char **labirinto(){
     int i,j;
     char **matriz;
     FILE *arquivoMatriz;
-    srand(time(NULL));
     //alocando linhas da matriz
     matriz = (char**) calloc(TAMANHO,sizeof(char*));
 
