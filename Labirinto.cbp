@@ -35,7 +35,9 @@
 		<Unit filename="Labirinto/imprimir.h" />
 		<Unit filename="Labirinto/labirinto.h" />
 		<Unit filename="Labirinto/listas.h" />
+		<Unit filename="Labirinto/metodosArvore.h" />
 		<Unit filename="Labirinto/metodosListas.h" />
+		<Unit filename="Labirinto/metodosMatriz.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

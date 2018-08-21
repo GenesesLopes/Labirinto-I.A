@@ -19,6 +19,7 @@ typedef struct ListaFechado{
 
 //Iniciando Ponteiro
 listaFechado *inicioFechado = NULL;
+listaFechado *fimFechado = NULL;
 //Estrutura da lista de caminho
 typedef struct ListaCaminho{
     arvore *no;

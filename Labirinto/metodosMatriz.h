@@ -23,10 +23,12 @@ int distanciaFalta(int linhaOrigem, int colunaOrigem, int linhaDestino, int colu
 arvore * decisao(arvore *no){
     arvore *aux = no->proximo[0];
     listaAberto *aux2;
-    int i;
+    int i, no1, no2;
     //pecorre até achar o menor
     for(i=0; i<no->filhos; i++){
-        if(aux->f > no->proximo[i]->f)
+            no1 = aux->f;
+            no2 = no->proximo[i]->f;
+        if(no1 < no2)
             aux = no->proximo[i];
     }
     //compara nó em lista de abertos
@@ -45,6 +47,7 @@ void quantidadeFilhos(arvore *no,char **matriz,  int linhaOrigem, int colunaOrig
     char abaixo = PAREDE, acima = PAREDE, esquerda = PAREDE, direita = PAREDE;
     listaAberto *abertos;
     listaFechado *fechados;
+
 
     //alocando memoria para vetor
     no->proximo = (arvore **) malloc(sizeof(arvore*));
@@ -356,6 +359,7 @@ void quantidadeFilhos(arvore *no,char **matriz,  int linhaOrigem, int colunaOrig
     no->filhos = contador;
 
 }
+
 
 
 #endif // METODOSMATRIZ_H_INCLUDED

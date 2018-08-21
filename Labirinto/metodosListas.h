@@ -41,8 +41,16 @@ void inserirFechado(arvore *no){
 
     listaFechado * novo = (listaFechado*) malloc(sizeof(listaFechado));
     novo->no = no;
-    novo->proximo = inicioFechado;
-    inicioFechado = novo;
+    if(fimFechado == NULL){
+        novo->proximo = fimFechado;
+        inicioFechado = novo;
+        fimFechado = novo;
+    }else{
+        novo->proximo = NULL;
+        fimFechado->proximo = novo;
+        fimFechado = novo;
+    }
+
 }
 
 listaFechado * pecorreFechado(int linha, int coluna){

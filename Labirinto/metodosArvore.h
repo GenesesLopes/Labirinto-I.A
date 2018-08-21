@@ -43,10 +43,13 @@ void pecorreArvore(char **matriz, arvore *local, int linhaOrigem, int colunaOrig
         }else{
             //Abrindo e contando quantidade de filhos
             quantidadeFilhos(local,matriz,linhaOrigem,colunaOrigem,linhaDestino,colunaDestino);
-            //inserir no atual na lista de nos fechados
-            inserirFechado(local);
             //escolher melhor caminho
             aux = decisao(local);
+            if(aux == NULL){
+                aux = fimFechado->no;
+            }
+            //inserir no atual na lista de nos fechados
+            inserirFechado(local);
             //inserir nos filhos entre os nos abertos
             for(i=0; i<local->filhos; i++)
                 inserirAberto(local->proximo[i]);
