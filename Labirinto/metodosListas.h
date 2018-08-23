@@ -6,12 +6,15 @@
 //Inicio dos métodos da lista de abertos
 
 void inserirAberto(arvore *no){
-
-    listaAberto * novo = (listaAberto*) malloc(sizeof(listaAberto));
-    novo->no = no;
-    novo->proximo = inicioAberto;
-    inicioAberto = novo;
-
+    int i;
+    for(i=0; i<8; i++){
+        if(no->proximo[i]!= NULL){
+            listaAberto * novo = (listaAberto*) malloc(sizeof(listaAberto));
+            novo->no = no->proximo[i];
+            novo->proximo = inicioAberto;
+            inicioAberto = novo;
+        }
+    }
 }
 
 listaAberto * pecorreAberto(int linha, int coluna){
@@ -25,14 +28,6 @@ listaAberto * pecorreAberto(int linha, int coluna){
     return aux;
 }
 
-listaAberto * comparaNo(arvore *no){
-    listaAberto *aux = inicioAberto;
-
-    while(aux != NULL && aux->no != no)
-        aux = aux->proximo;
-
-    return aux;
-}
 //fim de métodos da lista aberto
 
 //Inicio de métodos da lista de fechado
@@ -55,12 +50,14 @@ void inserirFechado(arvore *no){
 
 listaFechado * pecorreFechado(int linha, int coluna){
     listaFechado *aux = inicioFechado;
+    int linha1, coluna1;
 
     while (aux != NULL){
+        linha1 = aux->no->linha;
+        coluna1 = aux->no->coluna;
         if(aux->no->linha == linha && aux->no->coluna == coluna)
-          break;
-        else
-            aux = aux->proximo;
+            return aux;
+        aux = aux->proximo;
     }
 
     return aux;
