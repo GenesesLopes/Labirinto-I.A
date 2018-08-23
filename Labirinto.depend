@@ -14,59 +14,59 @@
 	<stdio.h>
 	"labirinto.h"
 
-1534986672 source:/home/geneses/Documentos/Labirinto-I.A/main.c
+1535002072 source:/home/geneses/Documentos/Labirinto-I.A/main.c
 	"Labirinto/imprimir.h"
 	"Labirinto/labirinto.h"
 	"Labirinto/metodosMatriz.h"
 	"Labirinto/metodosArvore.h"
 
-1534851926 /home/geneses/Documentos/Labirinto-I.A/Labirinto/imprimir.h
+1535001644 /home/geneses/Documentos/Labirinto-I.A/Labirinto/imprimir.h
 	<stdio.h>
 
-1534851926 /home/geneses/Documentos/Labirinto-I.A/Labirinto/labirinto.h
+1535001644 /home/geneses/Documentos/Labirinto-I.A/Labirinto/labirinto.h
 	<stdlib.h>
 	<stdio.h>
 
-1534981064 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosListas.h
+1535001644 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosListas.h
 	"listas.h"
 
-1534851926 /home/geneses/Documentos/Labirinto-I.A/Labirinto/listas.h
+1535001644 /home/geneses/Documentos/Labirinto-I.A/Labirinto/listas.h
 	"Arvore.h"
 
-1534851926 /home/geneses/Documentos/Labirinto-I.A/Labirinto/Arvore.h
+1535038680 /home/geneses/Documentos/Labirinto-I.A/Labirinto/Arvore.h
 
-1534995841 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosMatriz.h
+1535038652 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosMatriz.h
 	"metodosListas.h"
 	"Arvore.h"
 
-1534995479 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosArvore.h
+1535038694 /home/geneses/Documentos/Labirinto-I.A/Labirinto/metodosArvore.h
 	"Arvore.h"
 
-1534968643 source:/home/fabrica/Documentos/Labirinto-I.A/main.c
+1535002072 source:/home/fabrica/Documentos/Labirinto-I.A/main.c
 	"Labirinto/imprimir.h"
 	"Labirinto/labirinto.h"
 	"Labirinto/metodosMatriz.h"
 	"Labirinto/metodosArvore.h"
 
-1534851926 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/imprimir.h
+1535001644 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/imprimir.h
 	<stdio.h>
 
-1534851926 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/labirinto.h
+1535001644 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/labirinto.h
 	<stdlib.h>
 	<stdio.h>
 
-1534970380 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/metodosMatriz.h
+1535030998 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/metodosMatriz.h
 	"metodosListas.h"
 	"Arvore.h"
 
-1534969300 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/metodosListas.h
+1535001644 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/metodosListas.h
 	"listas.h"
 
-1534851926 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/listas.h
+1535001644 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/listas.h
 	"Arvore.h"
 
-1534851926 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/Arvore.h
+1535001644 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/Arvore.h
 
-1534969910 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/metodosArvore.h
+1535034438 /home/fabrica/Documentos/Labirinto-I.A/Labirinto/metodosArvore.h
 	"Arvore.h"
 

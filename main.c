@@ -18,9 +18,7 @@ void main(){
     printf("digite o valor para coluna de destino:\t");
     scanf("%d",&colunaDestino);
 
-    novo = inserirNoArvore(linhaOrigem,colunaOrigem);
-    matriz[linhaOrigem][colunaOrigem] = '*';
-    pecorreArvore(matriz,novo,linhaOrigem,colunaOrigem,linhaDestino,colunaDestino);
+    pecorreArvore(matriz,inicioArvore,linhaOrigem,colunaOrigem,linhaDestino,colunaDestino);
 
 
 

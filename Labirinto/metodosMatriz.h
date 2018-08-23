@@ -8,13 +8,8 @@
 
 //heuristica
 int Heuristica(int linhaOrigem, int colunaOrigem, int linhaDestino, int colunaDestino){
-    int difLinha = 0;
-    int difColuna = 0;
     int retorno = 0;
 
-    if(linhaOrigem == linhaDestino && colunaOrigem == colunaDestino)
-        retorno = 0;
-    else{
         do{
             if(linhaOrigem < linhaDestino){
                 retorno +=10;
@@ -32,77 +27,59 @@ int Heuristica(int linhaOrigem, int colunaOrigem, int linhaDestino, int colunaDe
                 retorno +=10;
                 colunaOrigem--;
             }
-        }while(linhaOrigem != linhaDestino && colunaOrigem != colunaDestino);
-    }
+        }while(linhaOrigem != linhaDestino || colunaOrigem != colunaDestino);
+
     return retorno;
 }
 
 void calculo(arvore *aux, int linhaDestino, int colunaDestino){
-    int haux,faux,gaux;
+
     if(aux->proximo[0]!= NULL){
         aux->proximo[0]->g = aux->g + 10;
         aux->proximo[0]->h = Heuristica(aux->proximo[0]->linha,aux->proximo[0]->coluna,linhaDestino,colunaDestino);
         aux->proximo[0]->f = aux->proximo[0]->g + aux->proximo[0]->h;
-        gaux = aux->proximo[0]->g;
-        haux = aux->proximo[0]->h;
-        faux = aux->proximo[0]->f;
+
     }
     if(aux->proximo[1]!= NULL){
         aux->proximo[1]->g = aux->g + 10;
         aux->proximo[1]->h = Heuristica(aux->proximo[1]->linha,aux->proximo[1]->coluna,linhaDestino,colunaDestino);
         aux->proximo[1]->f = aux->proximo[1]->g + aux->proximo[1]->h;
-        gaux = aux->proximo[1]->g;
-        haux = aux->proximo[1]->h;
-        faux = aux->proximo[1]->f;
+
     }
     if(aux->proximo[2]!= NULL){
         aux->proximo[2]->g = aux->g + 10;
         aux->proximo[2]->h = Heuristica(aux->proximo[2]->linha,aux->proximo[2]->coluna,linhaDestino,colunaDestino);
         aux->proximo[2]->f = aux->proximo[2]->g + aux->proximo[2]->h;
-        gaux = aux->proximo[2]->g;
-        haux = aux->proximo[2]->h;
-        faux = aux->proximo[2]->f;
+
     }
     if(aux->proximo[3]!= NULL){
         aux->proximo[3]->g = aux->g + 10;
         aux->proximo[3]->h = Heuristica(aux->proximo[3]->linha,aux->proximo[3]->coluna,linhaDestino,colunaDestino);
         aux->proximo[3]->f = aux->proximo[3]->g + aux->proximo[3]->h;
-        gaux = aux->proximo[3]->g;
-        haux = aux->proximo[3]->h;
-        faux = aux->proximo[3]->f;
+
     }
     if(aux->proximo[4]!= NULL){
         aux->proximo[4]->g = aux->g + 14;
         aux->proximo[4]->h = Heuristica(aux->proximo[4]->linha,aux->proximo[4]->coluna,linhaDestino,colunaDestino);
         aux->proximo[4]->f = aux->proximo[4]->g + aux->proximo[4]->h;
-        gaux = aux->proximo[4]->g;
-        haux = aux->proximo[4]->h;
-        faux = aux->proximo[4]->f;
+
     }
     if(aux->proximo[5]!= NULL){
         aux->proximo[5]->g = aux->g + 14;
         aux->proximo[5]->h = Heuristica(aux->proximo[5]->linha,aux->proximo[5]->coluna,linhaDestino,colunaDestino);
         aux->proximo[5]->f = aux->proximo[5]->g + aux->proximo[5]->h;
-        gaux = aux->proximo[5]->g;
-        haux = aux->proximo[5]->h;
-        faux = aux->proximo[5]->f;
+
     }
     if(aux->proximo[6]!= NULL){
         aux->proximo[6]->g = aux->g + 14;
         aux->proximo[6]->h = Heuristica(aux->proximo[6]->linha,aux->proximo[6]->coluna,linhaDestino,colunaDestino);
         aux->proximo[6]->f = aux->proximo[6]->g + aux->proximo[6]->h;
-        gaux = aux->proximo[6]->g;
-        haux = aux->proximo[6]->h;
-        faux = aux->proximo[6]->f;
-
     }
     if(aux->proximo[7]!= NULL){
         aux->proximo[7]->g = aux->g + 14;
         aux->proximo[7]->h = Heuristica(aux->proximo[7]->linha,aux->proximo[7]->coluna,linhaDestino,colunaDestino);
         aux->proximo[7]->f = aux->proximo[7]->g + aux->proximo[7]->h;
-        gaux = aux->proximo[7]->g;
-        haux = aux->proximo[7]->h;
-        faux = aux->proximo[7]->f;
+
     }
 
 
@@ -117,8 +94,6 @@ arvore * decisao(arvore *no){
     //escolher o menor filho
     while(contador < 8){
         if(no->proximo[contador] != NULL){
-                i = no->proximo[contador]->f;
-                j = menor;
             if(no->proximo[contador]->f <= menor){
                 menor = no->proximo[contador]->f;
                 menorFilho = no->proximo[contador];
@@ -147,8 +122,8 @@ arvore * decisao(arvore *no){
 
 //verificar filhos e calcular
 void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, int colunaOrigem){
-    char baixo = PAREDE, direita = PAREDE, acima = PAREDE, esquerda = PAREDE, desgraca;
-    int i, contador = 0;
+    char baixo = PAREDE, direita = PAREDE, acima = PAREDE, esquerda = PAREDE;
+    int i;
     arvore *noFechado = NULL;
 
 
@@ -157,7 +132,6 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
     for(i=0; i<8; i++)
         no->proximo[i] = NULL;
 
-    desgraca = matriz[linhaOrigem +1][colunaOrigem];
     //Para baixo
     if(matriz[linhaOrigem +1][colunaOrigem] != PAREDE){
         noFechado = pecorreFechado(linhaOrigem +1, coluna);
@@ -166,12 +140,12 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
             no->proximo[0] = (arvore *) malloc(sizeof(arvore));
             no->proximo[0]->linha = linhaOrigem +1;
             no->proximo[0]->coluna = colunaOrigem;
+            no->proximo[0]->pai = no;
             calculo(no,linha,coluna);
-            contador++;
-            //inserirAberto(no->proximo[0]);
+
         }
     }
-    desgraca = matriz[linhaOrigem][colunaOrigem +1];
+
     //Direita
     if(matriz[linhaOrigem][colunaOrigem +1] != PAREDE){
         noFechado = pecorreFechado(linhaOrigem, colunaOrigem +1);
@@ -180,12 +154,11 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
             no->proximo[1] = (arvore *) malloc(sizeof(arvore));
             no->proximo[1]->linha = linhaOrigem;
             no->proximo[1]->coluna = colunaOrigem +1;
+            no->proximo[1]->pai = no;
             calculo(no,linha,coluna);
-            contador++;
-            //inserirAberto(no->proximo[1]);
         }
     }
-    desgraca = matriz[linhaOrigem -1][colunaOrigem];
+
     //acima
     if(matriz[linhaOrigem -1][colunaOrigem] != PAREDE){
         noFechado = pecorreFechado(linhaOrigem -1, colunaOrigem);
@@ -194,12 +167,11 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
             no->proximo[2] = (arvore *) malloc(sizeof(arvore));
             no->proximo[2]->linha = linhaOrigem -1;
             no->proximo[2]->coluna = colunaOrigem;
+            no->proximo[2]->pai = no;
             calculo(no,linha,coluna);
-            contador++;
-            //inserirAberto(no->proximo[2]);
         }
     }
-    desgraca = matriz[linhaOrigem][colunaOrigem -1];
+
     //esquerda
     if(matriz[linhaOrigem][colunaOrigem -1] != PAREDE){
         noFechado = pecorreFechado(linhaOrigem, colunaOrigem -1);
@@ -208,13 +180,11 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
             no->proximo[3] = (arvore *) malloc(sizeof(arvore));
             no->proximo[3]->linha = linhaOrigem;
             no->proximo[3]->coluna = colunaOrigem -1;
+            no->proximo[3]->pai = no;
             calculo(no,linha,coluna);
-            contador++;
-            //inserirAberto(no->proximo[3]);
         }
     }
 
-    desgraca = matriz[linhaOrigem +1][colunaOrigem +1];
     //Diagonal direita abaixo
     if(matriz[linhaOrigem +1][colunaOrigem +1] != PAREDE){
         noFechado = pecorreFechado(linhaOrigem +1, colunaOrigem +1);
@@ -223,13 +193,11 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
                 no->proximo[4] = (arvore *) malloc(sizeof(arvore));
                 no->proximo[4]->linha = linhaOrigem +1;
                 no->proximo[4]->coluna = colunaOrigem +1;
+                no->proximo[4]->pai = no;
                 calculo(no,linha,coluna);
-                contador++;
-                //inserirAberto(no->proximo[4]);
             }
         }
     }
-    desgraca = matriz[linhaOrigem -1][colunaOrigem +1];
 
     //Diagonal direita acima
     if(matriz[linhaOrigem -1][colunaOrigem +1] != PAREDE){
@@ -239,14 +207,11 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
                 no->proximo[5] = (arvore *) malloc(sizeof(arvore));
                 no->proximo[5]->linha = linhaOrigem -1;
                 no->proximo[5]->coluna = colunaOrigem +1;
+                no->proximo[5]->pai = no;
                 calculo(no,linha,coluna);
-                contador++;
-                //inserirAberto(no->proximo[5]);
             }
         }
     }
-
-    desgraca = matriz[linhaOrigem -1][colunaOrigem -1];
 
     //Diagonal esquerda acima
     if(matriz[linhaOrigem -1][colunaOrigem -1] != PAREDE){
@@ -256,14 +221,12 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
                 no->proximo[6] = (arvore *) malloc(sizeof(arvore));
                 no->proximo[6]->linha = linhaOrigem -1;
                 no->proximo[6]->coluna = colunaOrigem -1;
+                no->proximo[6]->pai = no;
                 calculo(no,linha,coluna);
-                contador++;
-                //inserirAberto(no->proximo[6]);
             }
         }
     }
 
-    desgraca = matriz[linhaOrigem +1][colunaOrigem -1];
     //Diagonal esquerda abaixo
     if(matriz[linhaOrigem +1][colunaOrigem -1] != PAREDE){
         noFechado = pecorreFechado(linhaOrigem +1, colunaOrigem -1);
@@ -272,13 +235,11 @@ void filhos(char **matriz,arvore *no, int linha, int coluna, int linhaOrigem, in
                 no->proximo[7] = (arvore *) malloc(sizeof(arvore));
                 no->proximo[7]->linha = linhaOrigem +1;
                 no->proximo[7]->coluna = linhaOrigem -1;
+                no->proximo[7]->pai = no;
                 calculo(no,linha,coluna);
-                contador++;
-                //inserirAberto(no->proximo[7]);
             }
         }
     }
-    no->filhos = contador;
 }
 
 

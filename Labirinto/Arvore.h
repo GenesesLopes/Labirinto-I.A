@@ -12,7 +12,6 @@ typedef struct Arvore {
     int f;
     int linha;
     int coluna;
-    int filhos;
     struct Arvore **proximo;//Array de poneiros para armazenar os proximos nós
     struct Arvore *pai;
 }arvore;
