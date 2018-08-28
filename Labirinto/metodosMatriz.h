@@ -101,6 +101,10 @@ arvore * decisao(arvore *no){
         }
         contador++;
     }
+    i = menorFilho->linha;
+    j = menorFilho->coluna;
+
+
     //primeiro caso
     if(lista == NULL){
         inserirAberto(no);
@@ -112,8 +116,11 @@ arvore * decisao(arvore *no){
     //inserindo na lista de abertos
     inserirAberto(no);
     //caso já tenha visitado o no
-    if(jaVisitado != NULL)
-        return jaVisitado->no;
+    if(jaVisitado != NULL){
+        if(jaVisitado->no->f <= menorFilho->f){
+            return jaVisitado->no;
+        }
+    }
     else
         return menorFilho;
 
